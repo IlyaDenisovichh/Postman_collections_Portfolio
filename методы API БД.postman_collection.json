@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "379e2aae-443d-4ba5-8dc2-3ea204a33f3e",
+		"name": "методы API БД",
+		"description": "Методы работы с приложение БД",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26908782",
+		"_collection_link": "https://dark-spaceship-720329.postman.co/workspace/Team-Workspace~69be2b66-aee7-48c7-87d1-b4ad002fe2a0/collection/26908782-379e2aae-443d-4ba5-8dc2-3ea204a33f3e?action=share&creator=26908782&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Получение списка клиентов",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "карандаш",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ИЛЬЯ420",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/api/users/",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "получение конкретного  клиента",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "карандаш",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ИЛЬЯ420",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api-qa.skillbox.ru/practice1/api/users/14",
+					"protocol": "http",
+					"host": [
+						"api-qa",
+						"skillbox",
+						"ru"
+					],
+					"path": [
+						"practice1",
+						"api",
+						"users",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "создание клиента",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "карандаш",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ИЛЬЯ420",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n\"itemsOfClients\": \r\n[ \r\n{ \r\n\"id\": \"1\", \r\n\"person\": {\r\n\"name\": \"Данечка\", \r\n\"surname\": \"Печенкин\", \r\n\"patronymic\": \"Алексеевич\", \r\n\"dateOfBirth\": \"29.09.1998\", \r\n\"location\": \"Опалиха\" \r\n} \r\n},\r\n{ \r\n\"id\": \"2\", \r\n\"person\": {\r\n\"name\": \"Данка\", \r\n\"surname\": \"Пече\", \r\n\"patronymic\": \"Алексвич\", \r\n\"dateOfBirth\": \"29.09.1998\", \r\n\"location\": \"Опалиха\" \r\n} \r\n} \r\n] \r\n} \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-qa.skillbox.ru/practice1/api/users/create ",
+					"protocol": "https",
+					"host": [
+						"api-qa",
+						"skillbox",
+						"ru"
+					],
+					"path": [
+						"practice1",
+						"api",
+						"users",
+						"create "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Редактирование клиента",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "карандаш",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ИЛЬЯ420",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n\"update\": { \r\n\"name\": \"ghbdtn\", \r\n\"surname\": \"jhhjkk\", \r\n\"dateOfBirth\": \"09.09.1998\",\r\n\"location\": \"Moscow\" \r\n} \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-qa.skillbox.ru/practice1/api/users/6/update",
+					"protocol": "https",
+					"host": [
+						"api-qa",
+						"skillbox",
+						"ru"
+					],
+					"path": [
+						"practice1",
+						"api",
+						"users",
+						"6",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "удалить пользователя",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "карандаш",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ИЛЬЯ420",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api-qa.skillbox.ru/practice1/api/users/7/delete",
+					"protocol": "https",
+					"host": [
+						"api-qa",
+						"skillbox",
+						"ru"
+					],
+					"path": [
+						"practice1",
+						"api",
+						"users",
+						"7",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "удаление всех пользователей",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "карандаш",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ИЛЬЯ420",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api-qa.skillbox.ru/practice1/api/users/allUsers/delete",
+					"protocol": "https",
+					"host": [
+						"api-qa",
+						"skillbox",
+						"ru"
+					],
+					"path": [
+						"practice1",
+						"api",
+						"users",
+						"allUsers",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
